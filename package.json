@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"name": "portfolio",
+	"author": "suvanshenoy",
+	"private": "true",
+	"license": "MIT",
+	"type": "module",
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"@types/node": "^24.3.1",
+		"lerna": "^8.2.3",
+		"vite": "^7.1.4"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build"
+	}
+}

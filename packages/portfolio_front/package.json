@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"name": "@packages/portfolio_front",
+	"scripts": {
+		"w": "watchexec -c -e nim 'nim js portfolio_front.nim'",
+		"c": "nim js portfolio_front.nim"
+	}
+}
