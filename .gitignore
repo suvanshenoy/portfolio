@@ -1,3 +1,5 @@
 nimble.develop
 nimble.paths
 node_modules
+build
+*.js
