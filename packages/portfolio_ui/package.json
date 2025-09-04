@@ -1,8 +1,4 @@
 {
 	"$schema": "https://json.schemastore.org/package",
-	"name": "@packages/portfolio_ui",
-	"scripts": {
-		"w": "watchexec -c -e nim 'nim js portfolio_ui.nim'",
-		"c": "nim js portfolio_ui.nim"
-	}
+	"name": "@packages/portfolio_ui"
 }

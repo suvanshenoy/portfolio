@@ -14,7 +14,8 @@
 		"vite": "^7.1.4"
 	},
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build"
+		"dev:vite": "vite",
+		"build:vite": "vite build",
+		"dev:nimble:gen": "watchexec -c -e nim 'nimble gen'"
 	}
 }
