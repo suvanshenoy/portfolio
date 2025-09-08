@@ -1,10 +1,9 @@
 # Package
-
+ 
 version       = "0.1.0"
 author        = "suvanshenoy"
 description   = "A developer porfolio"
 license       = "MIT"
-
 
 # Dependencies
 
