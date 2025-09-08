@@ -3,3 +3,4 @@ nimble.paths
 node_modules
 build
 *.js
+patches
