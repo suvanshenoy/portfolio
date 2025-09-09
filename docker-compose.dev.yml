@@ -16,4 +16,3 @@ services:
         RUN /root/.nimble/bin/nimble gen && chmod +x portfolio.js
     ports:
       - 3000:3000
-    restart: always
