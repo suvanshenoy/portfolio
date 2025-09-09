@@ -1,0 +1,19 @@
+services:
+  portfolio:
+    image: ubuntu:latest
+    container_name: portfolio
+    build:
+      dockerfile_inline: |
+        FROM ubuntu:latest
+        RUN apt update && apt install -y
+        RUN apt install gcc xz-utils git curl npm -y
+        RUN curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+        RUN chmod +x init.sh && ./init.sh -y
+        RUN npm install -g bun
+        WORKDIR /app
+        COPY . .
+        RUN /root/.nimble/bin/nimble install && bun install
+        RUN /root/.nimble/bin/nimble gen && chmod +x portfolio.js
+    ports:
+      - 3000:3000
+    restart: always

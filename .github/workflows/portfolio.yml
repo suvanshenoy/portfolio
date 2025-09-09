@@ -13,25 +13,12 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macOS-latest
+    runs-on: ubuntu-latest
+    container:
+      image: docker:28.4.0
     steps:
-      - uses: actions/checkout@v4
-      - uses: nim-lang/setup-nimble-action@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install depedencies using nimble
-        run: nimble install
-      - uses: oven-sh/setup-bun@v2
-      - name: Install depedencies using bun
-        run: bun install
-      - name: Generate javascript from nim
-        run: bun dev:nimble:gen
-      - name: Run vite
-        run: bun dev:vite
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build docker image
+        run: docker compose -f ./docker-compose.dev.yml up --build
 
