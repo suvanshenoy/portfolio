@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"name": "react-fullstack-template",
+	"workspaces": {
+		"packages": [
+			"./apps/*",
+			"./packages/*",
+			"./deps/*"
+		]
+	}
+}

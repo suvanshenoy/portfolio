@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "../../packages/nestjs-src/tsconfig.json",
+	"compilerOptions": {
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"baseUrl": "../../packages/nest-src",
+		"outDir": "dist"
+	},
+	"exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}

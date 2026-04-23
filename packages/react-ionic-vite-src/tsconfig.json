@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"types": ["node"],
+		"noEmit": true,
+		"lib": ["DOM", "ESNext"],
+		"paths": {
+			"@/*": ["./*"],
+			"@shadcn-ui/*": ["./shadcn-ui/ui/*"]
+		}
+	}
+}

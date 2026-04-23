@@ -1,0 +1,13 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "nestjs",
+	"buildCommand": "sh vercel.sh",
+	"outputDirectory": "./apps/nest/dist",
+	"routes": [
+		{
+			"src": "./packages/nest-src/main.ts",
+			"dest": "./apps/nest/dist/main.js",
+			"methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+		}
+	]
+}

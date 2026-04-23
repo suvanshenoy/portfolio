@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"types": ["vite/client"],
+		"noEmit": true,
+		"lib": ["DOM", "ESNext"],
+		"paths": {
+			"@/*": ["../../packages/react-ionic-vite-src/*"],
+			"@shadcn-ui/*": ["../../packages/react-ionic-vite-src/shadcn-ui/ui/*"]
+		}
+	},
+	"include": ["vite.config.ts"]
+}
