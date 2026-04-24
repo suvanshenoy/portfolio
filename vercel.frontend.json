@@ -1,0 +1,12 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "ionic-react",
+	"buildCommand": "sh vercel.frontend.sh",
+	"outputDirectory": "./apps/react-ionic-vite/dist",
+	"routes": [
+		{
+			"src": "./apps/react-ionic-vite/main.tsx",
+			"dest": "./apps/react-ionic-vite/dist/"
+		}
+	]
+}

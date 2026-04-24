@@ -5,7 +5,15 @@ import { AppModule } from "./app.module";
 async function bootstrap() {
 	const app = await NestFactory.create<NestExpressApplication>(AppModule);
 	app.setGlobalPrefix("api");
-	app.enableCors();
+	app.enableCors({
+		origin: [
+			"http://localhost:5173",
+			JSON.stringify(process.env.PORTFOLIO_FRONTEND_URL),
+		],
+		methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"],
+		credentials: true,
+		maxAge: 86400,
+	});
 	await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

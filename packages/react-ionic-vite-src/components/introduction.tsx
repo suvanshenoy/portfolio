@@ -1,6 +1,7 @@
-import { CapacitorHttp, type HttpResponse } from "@capacitor/core";
+import { CapacitorHttp } from "@capacitor/core";
 import { IonButton, isPlatform } from "@ionic/react";
 import { OrbitingCircles } from "@shadcn-ui/orbiting-circles";
+import { API_BASE_URL } from "../constants";
 
 type IntroductionType = {
 	name: "Suvan Shenoy";
@@ -15,19 +16,16 @@ type LinkJsonResponse = {
 
 export function Introduction({ name, profession }: IntroductionType) {
 	const openResume = async () => {
-		if (isPlatform("android")) {
-			const linkResponse: HttpResponse = await CapacitorHttp.get({
-				url: "",
-				headers: {
-					"Content-Type": "application/json",
-					accept: "application/json",
-				},
+		if (isPlatform("hybrid")) {
+			const linkResponse = await CapacitorHttp.get({
+				url: `${API_BASE_URL}/api/link/resume`,
 			});
-			console.log(linkResponse);
+			const linkJsonResponse: LinkJsonResponse = linkResponse.data;
+			window.open(linkJsonResponse.url);
 		} else {
-			const linkResponse = await fetch("");
-			const linkJson: LinkJsonResponse = await linkResponse.json();
-			window.open(linkJson.url);
+			const linkResponse = await fetch(`${API_BASE_URL}/api/link/resume`);
+			const linkJsonResponse: LinkJsonResponse = await linkResponse.json();
+			window.open(linkJsonResponse.url);
 		}
 	};
 

@@ -5,6 +5,10 @@ tasks:
     dir: ./apps/react-ionic-vite
     cmd: bun run dev
 
+  react-ionic-vite:web:build:
+    dir: ./apps/react-ionic-vite
+    cmd: bun run build
+
   react-ionic-vite:add:android:
     dir: ./packages/react-ionic-vite-src
     prompt: "Are you sure you want to add android?"
