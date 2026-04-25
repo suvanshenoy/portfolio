@@ -5,9 +5,7 @@ import {
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-import { OrbitingCircles } from "@shadcn-ui/orbiting-circles";
-import { File } from "lucide-react";
-import { Introduction, TechStack } from "../components";
+import { Introduction, TechStack } from "@/components";
 
 export function HomePage() {
 	return (

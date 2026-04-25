@@ -7,8 +7,7 @@
 		"noEmit": true,
 		"lib": ["DOM", "ESNext"],
 		"paths": {
-			"@/*": ["./*"],
-			"@shadcn-ui/*": ["./shadcn-ui/ui/*"]
+			"@/*": ["./*"]
 		}
 	}
 }

@@ -1,13 +1,37 @@
 import {
-	IonCol,
 	IonContent,
-	IonGrid,
 	IonHeader,
+	IonItem,
+	IonLabel,
+	IonList,
 	IonPage,
-	IonRow,
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
+
+const skills = {
+	languageRuntimes: ["Html", "Css", "Javascript", "Typescript", "Nodejs"],
+	libraryFrameworks: [
+		"React",
+		"Tailwind",
+		"Zustand",
+		"Zod",
+		"Vite",
+		"Ionic",
+		"Mui",
+		"Bryntum",
+		"Nextjs",
+	],
+	platformTools: [
+		"Git",
+		"Github",
+		"Linux",
+		"Clickup",
+		"Slack",
+		"Oracle Virutal Box",
+	],
+	deploymentDevops: ["Docker", "Vercel"],
+};
 
 export function SkillsPage() {
 	return (
@@ -18,29 +42,36 @@ export function SkillsPage() {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				<IonGrid>
-					<h2>Languages</h2>
-					<IonRow>
-						<IonCol>Html</IonCol>
-						<IonCol>Css</IonCol>
-						<IonCol>Javascript</IonCol>
-						<IonCol>Typescript</IonCol>
-					</IonRow>
-
-					<h2>Frameworks/Libraries</h2>
-					<IonRow>
-						<IonCol>Nextjs</IonCol>
-						<IonCol>React</IonCol>
-						<IonCol>Ionic</IonCol>
-						<IonCol>Zustand</IonCol>
-					</IonRow>
-
-					<h2>Tools</h2>
-					<IonRow>
-						<IonCol>Git</IonCol>
-						<IonCol>Github</IonCol>
-					</IonRow>
-				</IonGrid>
+				<div className="p-2">
+					<ul>
+						<h3>Languages/Runtimes</h3>
+						{skills.languageRuntimes.map((value) => (
+							<li>{value}</li>
+						))}
+					</ul>
+					<br />
+					<ul>
+						<h3>Library/Framworks</h3>
+						{skills.libraryFrameworks.map((value) => (
+							<li>{value}</li>
+						))}
+					</ul>
+					<br />
+					<ul>
+						<h3>Deployment/Devops</h3>
+						{skills.deploymentDevops.map((value) => (
+							<li>{value}</li>
+						))}
+					</ul>
+					<br />
+					<ul>
+						<h3>Platform/Tools</h3>
+						{skills.platformTools.map((value) => (
+							<li>{value}</li>
+						))}
+					</ul>
+					<br />
+				</div>
 			</IonContent>
 		</IonPage>
 	);
