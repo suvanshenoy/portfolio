@@ -55,6 +55,16 @@ tasks:
       - rm -rf ./deps/orm/node_modules
       - rm -rf ./node_modules
 
+  deploy:backend:
+    cmds:
+      - rm -r ./.vercel
+      - bunx vercel --local-config=vercel.backend.json --prod
+
+  deploy:frontend:
+    cmds:
+      - rm -r ./.vercel
+      - bunx vercel --local-config=vercel.frontend.json --prod
+
   setup:
     cmds:
       - bun i
