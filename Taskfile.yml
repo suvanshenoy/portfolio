@@ -43,6 +43,13 @@ tasks:
       - bun run prisma generate
       - bun run prisma migrate dev --name init
 
+  nest:orm:deploy:
+    dir: ./packages/nest-src
+    cmds:
+      - task nest:orm
+      - bun run prisma migrate deploy
+      - bun run prisma db push
+
   cleanup:
     cmds:
       - rm -rf ./packages/react-ionic-vite-src/node_modules

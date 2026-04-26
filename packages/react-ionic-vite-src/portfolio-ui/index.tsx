@@ -1,1 +1,2 @@
-export { SimpleIconCircles } from "./simple-icon-circles.tsx";
+export { ProjectCard } from "./project-card";
+export { SimpleIconCircles } from "./simple-icon-circles";

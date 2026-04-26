@@ -51,12 +51,12 @@ export function Introduction({ name, profession }: IntroductionType) {
 						<SimpleIconCircles
 							radius={30}
 							iconSize={30}
-							simpleIconImages={languageRuntimes}
+							simpleIconImages={languageRuntimesImages}
 						/>
 						<SimpleIconCircles
 							radius={90}
 							iconSize={90}
-							simpleIconImages={libraryFrameworks}
+							simpleIconImages={libraryFrameworksImages}
 						/>
 					</>
 				) : (
@@ -64,12 +64,12 @@ export function Introduction({ name, profession }: IntroductionType) {
 						<SimpleIconCircles
 							radius={30}
 							iconSize={30}
-							simpleIconImages={languageRuntimes}
+							simpleIconImages={languageRuntimesImages}
 						/>
 						<SimpleIconCircles
 							radius={120}
 							iconSize={120}
-							simpleIconImages={libraryFrameworks}
+							simpleIconImages={libraryFrameworksImages}
 						/>
 					</>
 				)}
@@ -88,3 +88,17 @@ export function Introduction({ name, profession }: IntroductionType) {
 		</div>
 	);
 }
+export const languageRuntimesImages = [
+	"html5",
+	"javascript",
+	"typescript",
+	"nodedotjs",
+];
+
+export const libraryFrameworksImages = [
+	"ionic",
+	"react",
+	"tailwindcss",
+	"vite",
+	"mui",
+];

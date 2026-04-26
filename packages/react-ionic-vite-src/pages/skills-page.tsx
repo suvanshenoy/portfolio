@@ -1,37 +1,10 @@
 import {
 	IonContent,
 	IonHeader,
-	IonItem,
-	IonLabel,
-	IonList,
 	IonPage,
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-
-const skills = {
-	languageRuntimes: ["Html", "Css", "Javascript", "Typescript", "Nodejs"],
-	libraryFrameworks: [
-		"React",
-		"Tailwind",
-		"Zustand",
-		"Zod",
-		"Vite",
-		"Ionic",
-		"Mui",
-		"Bryntum",
-		"Nextjs",
-	],
-	platformTools: [
-		"Git",
-		"Github",
-		"Linux",
-		"Clickup",
-		"Slack",
-		"Oracle Virutal Box",
-	],
-	deploymentDevops: ["Docker", "Vercel"],
-};
 
 export function SkillsPage() {
 	return (
@@ -51,7 +24,7 @@ export function SkillsPage() {
 					</ul>
 					<br />
 					<ul>
-						<h3>Library/Framworks</h3>
+						<h3>Library/Frameworks</h3>
 						{skills.libraryFrameworks.map((value) => (
 							<li>{value}</li>
 						))}
@@ -76,3 +49,27 @@ export function SkillsPage() {
 		</IonPage>
 	);
 }
+
+const skills = {
+	languageRuntimes: ["Html", "Css", "Javascript", "Typescript", "Nodejs"],
+	libraryFrameworks: [
+		"React",
+		"Tailwind",
+		"Zustand",
+		"Zod",
+		"Vite",
+		"Ionic",
+		"Mui",
+		"Bryntum",
+		"Nextjs",
+	],
+	platformTools: [
+		"Git",
+		"Github",
+		"Linux",
+		"Clickup",
+		"Slack",
+		"Oracle Virutal Box",
+	],
+	deploymentDevops: ["Docker", "Vercel"],
+};

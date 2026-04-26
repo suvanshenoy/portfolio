@@ -17,7 +17,13 @@ import {
 	personOutline,
 } from "ionicons/icons";
 import { Redirect, Route } from "react-router";
-import { AboutPage, ContactPage, HomePage, SkillsPage } from "./pages";
+import {
+	AboutPage,
+	ContactPage,
+	HomePage,
+	ProjectsPage,
+	SkillsPage,
+} from "./pages";
 
 setupIonicReact();
 
@@ -31,7 +37,11 @@ export function App() {
 
 						<Route path="/home" render={() => <HomePage />} exact={true} />
 						<Route path="/about" render={() => <AboutPage />} exact={true} />
-						<Route path="/projects" render={() => <HomePage />} exact={true} />
+						<Route
+							path="/projects"
+							render={() => <ProjectsPage />}
+							exact={true}
+						/>
 						<Route path="/skills" render={() => <SkillsPage />} exact={true} />
 						<Route
 							path="/contact"
