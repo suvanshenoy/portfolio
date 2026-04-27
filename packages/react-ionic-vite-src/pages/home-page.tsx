@@ -12,7 +12,7 @@ export function HomePage() {
 		<IonPage className="home-page">
 			<IonHeader>
 				<IonToolbar>
-					<IonTitle>Home</IonTitle>
+					<IonTitle className="ml-3">Home</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>

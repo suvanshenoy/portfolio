@@ -17,7 +17,7 @@ export function ProjectsPage() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
-					<IonTitle>Projects</IonTitle>
+					<IonTitle className="ml-3">Projects</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>

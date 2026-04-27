@@ -9,6 +9,7 @@ async function bootstrap() {
 		origin: [
 			"http://localhost:5173",
 			JSON.stringify(process.env.PORTFOLIO_FRONTEND_URL),
+			"https://portfolio-frontend-xy.vercel.app",
 		],
 		methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"],
 		credentials: true,

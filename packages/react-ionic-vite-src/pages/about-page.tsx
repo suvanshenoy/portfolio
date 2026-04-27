@@ -13,7 +13,7 @@ export function AboutPage() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
-					<IonTitle>About</IonTitle>
+					<IonTitle class="ml-3">About</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
@@ -29,16 +29,24 @@ export function AboutPage() {
 					</p>
 				</div>
 				<div className="flex flex-col gap-2 p-2 justify-center items-center space-y-4">
-					<div className=" bg-gray-800 p-2 rounded w-80 md:w-150 flex gap-2 justify-around">
-						<IonIcon icon={businessOutline} size="large" className="my-4" />
-						<h2>Experience</h2>
-						<p className="font-semibold my-5">6 Months</p>
+					<div className=" bg-gray-800 p-8 rounded w-80 md:w-150">
+						<div className="flex justify-between items-center">
+							<IonIcon icon={businessOutline} size="large" />
+							<p className="font-semibold text-xl md:text-2xl">Experience</p>
+							<p className="font-semibold bg-gray-700 rounded-full p-2 md:text-xl">
+								6 Months
+							</p>
+						</div>
 					</div>
 
-					<div className=" bg-gray-800 p-2 rounded w-80 md:w-150 flex gap-2 justify-around">
-						<IonIcon icon={locationOutline} size="large" className="my-4" />
-						<h2>Location</h2>
-						<p className="font-semibold my-5">India</p>
+					<div className=" bg-gray-800 p-8 rounded w-80 md:w-150">
+						<div className="flex justify-between items-center">
+							<IonIcon icon={locationOutline} size="large" />
+							<p className="mr-8 font-semibold text-xl md:text-2xl">Location</p>
+							<p className="font-semibold mr-7 bg-gray-700 rounded-full p-2 md:text-xl">
+								India
+							</p>
+						</div>
 					</div>
 				</div>
 			</IonContent>

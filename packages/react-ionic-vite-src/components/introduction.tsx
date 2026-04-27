@@ -2,7 +2,7 @@ import { CapacitorHttp } from "@capacitor/core";
 import { IonButton, isPlatform } from "@ionic/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { API_BASE_URL, languageRuntimes, libraryFrameworks } from "@/constants";
+import { API_BASE_URL } from "@/constants";
 import { SimpleIconCircles } from "@/portfolio-ui";
 
 type IntroductionType = {
@@ -40,12 +40,15 @@ export function Introduction({ name, profession }: IntroductionType) {
 
 	return (
 		<div className="py-4 m-2">
-			<div className="p-2 text-3xl md:text-6xl leading-tight">
-				<p>Hey, I'm</p>
-				<p>{name}</p>
-				<p>A {profession}</p>
+			<div className="m-2 p-2 text-3xl md:text-6xl leading-tight">
+				<p>
+					Hey, I'm
+					<br />
+					{name}
+					<br />A {profession}
+				</p>
 			</div>
-			<div className="flex justify-center items-center h-125 relative">
+			<div className="flex justify-center items-center h-125">
 				{isPlatform("hybrid") ? (
 					<>
 						<SimpleIconCircles
@@ -74,7 +77,7 @@ export function Introduction({ name, profession }: IntroductionType) {
 					</>
 				)}
 			</div>
-			<div className="p-2">
+			<div className="p-2 m-2">
 				<p className="leading-relaxed sm:text-3xl text-xl">
 					I build scalable, user-friendly application with modern technologies
 				</p>

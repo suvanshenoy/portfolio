@@ -18,7 +18,7 @@ export function ProjectCard({
 	projectImageSrc,
 	projectTitle,
 	projectDescription,
-	projectGithubUrl,
+	projectGithubSrc,
 }: ProjectCardProps) {
 	return (
 		<div className="p-2 m-2">
@@ -37,7 +37,7 @@ export function ProjectCard({
 					<Button
 						className="w-full"
 						onClick={() => {
-							window.open(projectGithubUrl);
+							window.open(projectGithubSrc);
 						}}
 					>
 						View

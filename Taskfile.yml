@@ -62,6 +62,54 @@ tasks:
       - rm -rf ./deps/orm/node_modules
       - rm -rf ./node_modules
 
+  biome:init:
+    cmds:
+      - bun --cwd ./apps/react-ionic-vite biome init
+      - bun --cwd ./apps/nest biome init
+
+      - bun --cwd ./packages/react-ionic-vite-src biome init
+      - bun --cwd ./packages/nest-src biome init
+
+  biome:check:
+    cmds:
+      - bun --cwd ./apps/react-ionic-vite  biome check
+      - bun --cwd ./apps/nest biome check
+
+      - bun --cwd ./packages/react-ionic-vite-src biome check
+      - bun --cwd ./packages/nest-src biome check
+
+  biome:fix:
+    cmds:
+      - bun --cwd ./apps/react-ionic-vite biome check --fix
+      - bun --cwd ./apps/nest biome check --fix
+
+      - bun --cwd ./packages/react-ionic-vite-src biome check --fix
+      - bun --cwd ./packages/nest-src biome check --fix
+
+  biome:fix:unsafe:
+    cmds:
+      - bun --cwd ./apps/react-ionic-vite biome check --fix --unsafe
+      - bun --cwd ./apps/nest biome check --fix --unsafe
+
+      - bun --cwd ./packages/react-ionic-vite-src biome check --fix --unsafe
+      - bun --cwd ./packages/nest-src biome check --fix --unsafe
+
+  biome:migrate:
+    cmds:
+      - bun --cwd ./apps/react-ionic-vite biome migrate --write
+      - bun --cwd ./apps/nest biome migrate --write
+
+      - bun --cwd ./packages/react-ionic-vite-src biome migrate --write
+      - bun --cwd ./packages/nest-src biome migrate --write
+
+  biome:cleanup:
+    cmds:
+      - rm -rf ./apps/react-ionic-vite/biome.json
+      - rm -rf ./apps/nest/biome.json
+
+      - rm -rf ./packages/react-ionic-vite-src/biome.json
+      - rm -rf ./packages/nest-src/biome.json
+
   setup:
     cmds:
       - bun i

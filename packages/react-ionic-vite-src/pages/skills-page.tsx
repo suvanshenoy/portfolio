@@ -11,36 +11,44 @@ export function SkillsPage() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
-					<IonTitle>Skills</IonTitle>
+					<IonTitle className="ml-3">Skills</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				<div className="p-2">
-					<ul>
-						<h3>Languages/Runtimes</h3>
+				<div className="p-2 m-2">
+					<h3 className="my-2 py-2 ">Languages/Runtimes</h3>
+					<ul className="inline-flex flex-wrap md:flex-row  space-x-2 gap-8 p-4 rounded-md">
 						{skills.languageRuntimes.map((value) => (
-							<li>{value}</li>
+							<li className="p-4 bg-gray-800 text-gray-200 rounded-md font-semibold">
+								{value}
+							</li>
 						))}
 					</ul>
 					<br />
-					<ul>
-						<h3>Library/Frameworks</h3>
+					<h3 className="my-2 py-2">Library/Frameworks</h3>
+					<ul className="inline-flex flex-wrap md:flex-row  space-x-2 gap-8 p-4 rounded-md">
 						{skills.libraryFrameworks.map((value) => (
-							<li>{value}</li>
+							<li className="p-4 bg-gray-800 text-gray-200 rounded-md font-semibold">
+								{value}
+							</li>
 						))}
 					</ul>
 					<br />
-					<ul>
-						<h3>Deployment/Devops</h3>
+					<h3 className="my-2 py-2">Deployment/Devops</h3>
+					<ul className="inline-flex flex-wrap md:flex-row  space-x-2 gap-8 p-4 rounded-md">
 						{skills.deploymentDevops.map((value) => (
-							<li>{value}</li>
+							<li className="p-4 bg-gray-800 text-gray-200 rounded-md font-semibold">
+								{value}
+							</li>
 						))}
 					</ul>
 					<br />
-					<ul>
-						<h3>Platform/Tools</h3>
+					<h3 className="my-2 py-2">Platform/Tools</h3>
+					<ul className="inline-flex flex-wrap md:flex-row  space-x-2 gap-8 p-4 rounded-md">
 						{skills.platformTools.map((value) => (
-							<li>{value}</li>
+							<li className="p-4 bg-gray-800 text-gray-200 rounded-md font-semibold">
+								{value}
+							</li>
 						))}
 					</ul>
 					<br />
@@ -71,5 +79,5 @@ const skills = {
 		"Slack",
 		"Oracle Virutal Box",
 	],
-	deploymentDevops: ["Docker", "Vercel"],
+	deploymentDevops: ["Docker", "Vercel", "Terraform", "Github Actions"],
 };

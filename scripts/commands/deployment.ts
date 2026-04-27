@@ -7,9 +7,7 @@ export class Deployment {
 		execSync(`${ghApiCmd} --method GET ${apiUrl}`),
 	);
 	private deploymentsPerPage = formatGhOutput(
-		execSync(
-			`${ghApiCmd} --method GET ${apiUrl}?per_page=${this.totalDeployments.length - 1}`,
-		),
+		execSync(`${ghApiCmd} --method GET ${apiUrl}?per_page=100`),
 	);
 
 	private deploymentIds: number[] = [];
