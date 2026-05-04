@@ -2,6 +2,8 @@
 	"name": "@packages/nest-src",
 	"dependencies": {
 		"@deps/nest": "workspace:*",
-		"@deps/orm": "workspace:*"
+		"@deps/orm": "workspace:*",
+		"@nestjs/config": "^4.0.4",
+		"zod": "^4.4.3"
 	}
 }

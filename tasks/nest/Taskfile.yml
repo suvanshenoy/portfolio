@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+dotenv:
+  - .env
+
+env:
+  NODE_ENV: development
+
+tasks:
+  start:
+    dotenv:
+      - .env
+    dir: ../../packages/nest-src
+    cmds:
+      - echo "[NODE_ENV=$NODE_ENV]"
+      - NODE_ENV=$NODE_ENV && bun nest start
+
+  build:
+    dir: ../../packages/nest-src
+    cmds:
+      - echo "[NODE_ENV=$NODE_ENV]"
+      - NODE_ENV=$NODE_ENV && bun nest build
+
+  start:watch:
+    dir: ../../packages/nest-src
+    cmds:
+      - echo "[NODE_ENV=$NODE_ENV]"
+      - NODE_ENV=$NODE_ENV && bun nest start --watch
+
+  start:watch:debug:
+    dir: ../../packages/nest-src
+    cmds:
+      - echo "[NODE_ENV=$NODE_ENV]"
+      - NODE_ENV=$NODE_ENV && bun nest start --watch --debug
+
+  orm:init:
+    dir: ../../packages/nest-src
+    cmds:
+      # - bun run prisma init --datasource-provider postgresql --output ./generated/prisma
+      - bun run prisma generate
+      - bun run prisma migrate dev --name init
+
+  orm:deploy:
+    dir: ../../packages/nest-src
+    cmds:
+      - task nest:orm
+      - bun run prisma migrate deploy
+      - bun run prisma db push

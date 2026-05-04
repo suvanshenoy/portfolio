@@ -28,12 +28,10 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		define: {
-			__PORTFOLIO_BACKEND_URL__: JSON.stringify(env.PORTFOLIO_BACKEND_URL),
+			__BACKEND_URL__: JSON.stringify(env.BACKEND_URL),
 		},
 		server: {
-			port: env.PORTFOLIO_FRONTEND_PORT
-				? Number(env.PORTFOLIO_FRONTEND_PORT)
-				: 5173,
+			port: 5173,
 		},
 	};
 });

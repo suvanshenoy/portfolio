@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  web:
+    dir: ../../apps/react-ionic-vite
+    cmd: bun run vite
+
+  web:build:
+    dir: ../../apps/react-ionic-vite
+    cmd: tsc -b && bun run vite build
+
+  add:android:
+    dir: ../../packages/react-ionic-vite-src
+    prompt: "Are you sure you want to add android?"
+    cmd: bun cap add android
+
+  android:
+    cmds:
+      - task react-ionic-vite:web:build
+      - defer: bun --cwd ../../packages/react-ionic-vite-src bun cap run android
+      - task: react-ionic-vite:add:android

@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  setup:
+    cmds:
+      - bun i
+
+      - cp -rf ../../packages/nest-src/node_modules/@deps/nest/node_modules/* ../../packages/nest-src/node_modules
+      - cp -rf ../../packages/nest-src/node_modules/@deps/nest/node_modules/.bin ../../packages/nest-src/node_modules
+
+      - cp -rf ../../packages/nest-src/node_modules/@deps/orm/node_modules/* ../../packages/nest-src/node_modules
+      - cp -rf ../../packages/nest-src/node_modules/@deps/orm/node_modules/.bin ../../packages/nest-src/node_modules
+
+      - cp -rf ../../packages/react-ionic-vite-src/node_modules/@deps/react-ionic-vite/node_modules/* ../../packages/react-ionic-vite-src/node_modules
+      - cp -rf ../../packages/react-ionic-vite-src/node_modules/@deps/react-ionic-vite/node_modules/.bin ../../packages/react-ionic-vite-src/node_modules
+
+      - cp -rf ../../apps/react-ionic-vite/node_modules/@deps/react-ionic-vite/node_modules/* ../../apps/react-ionic-vite/node_modules
+      - cp -rf ../../apps/react-ionic-vite/node_modules/@deps/react-ionic-vite/node_modules/.bin ../../apps/react-ionic-vite/node_modules
+
+      - cp -rf ../../apps/nest/node_modules/@deps/nest/node_modules/* ../../apps/nest/node_modules
+      - cp -rf ../../apps/nest/node_modules/@deps/nest/node_modules/.bin ../../apps/nest/node_modules
+
+      - cp -rf ../../apps/nest/node_modules/@deps/orm/node_modules/* ../../apps/nest/node_modules
+      - cp -rf ../../apps/nest/node_modules/@deps/orm/node_modules/.bin ../../apps/nest/node_modules
+
+      - cp -rf ../../apps/react-ionic-vite/node_modules/@packages/react-ionic-vite-src/node_modules/* ../../apps/react-ionic-vite/node_modules
+      - cp -rf ../../apps/react-ionic-vite/node_modules/@packages/react-ionic-vite-src/node_modules/.bin ../../apps/react-ionic-vite/node_modules
+
+      - cp -rf ../../apps/nest/node_modules/@packages/nest-src/node_modules/* ../../apps/nest/node_modules
+      - cp -rf ../../apps/nest/node_modules/@packages/nest-src/node_modules/.bin ../../apps/nest/node_modules
