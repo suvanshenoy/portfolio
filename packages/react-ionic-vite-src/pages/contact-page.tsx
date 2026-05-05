@@ -50,8 +50,12 @@ export function ContactPage() {
 								/>
 								<button
 									type="button"
-									onClick={() => window.open(link.url)}
-									className="mt-1 text-blue-500 text-2xl"
+									onClick={() =>
+										link.name === "gmail"
+											? window.open(`mailto:${link.url}`)
+											: window.open(link.url)
+									}
+									className="mt-1 text-blue-500 text-xl md:text-2xl"
 								>
 									{link.name}
 								</button>

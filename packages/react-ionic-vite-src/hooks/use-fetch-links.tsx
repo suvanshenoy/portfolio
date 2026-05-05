@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../constants";
 
-type LinkNames = "resume" | "email" | "github" | "linkedin";
+type LinkNames = "resume" | "gmail" | "github" | "linkedin";
 
 type LinkJsonResponse = {
 	id: number;
