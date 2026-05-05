@@ -10,8 +10,6 @@ env:
 
 tasks:
   start:
-    dotenv:
-      - .env
     dir: ../../packages/nest-src
     cmds:
       - echo "[NODE_ENV=$NODE_ENV]"
@@ -45,6 +43,6 @@ tasks:
   orm:deploy:
     dir: ../../packages/nest-src
     cmds:
-      - task nest:orm
+      - task: orm:init
       - bun run prisma migrate deploy
       - bun run prisma db push

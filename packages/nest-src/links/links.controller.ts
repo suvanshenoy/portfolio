@@ -7,7 +7,7 @@ export class LinksController {
   constructor(private readonly linksService: LinksService){}
 
   @Get("link/:name")
-  async getLinkByName(@Param("name") name: string): Promise<Links|null> {
+  async getLinkByName(@Param("name") name: string): Promise<Links | null> {
     return this.linksService.link({name: name});
   }
 

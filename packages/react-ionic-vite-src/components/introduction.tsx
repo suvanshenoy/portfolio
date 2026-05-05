@@ -1,8 +1,5 @@
-import { CapacitorHttp } from "@capacitor/core";
 import { IonButton, isPlatform } from "@ionic/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { API_BASE_URL } from "@/constants";
+import { useFetchLinks } from "@/hooks";
 import { SimpleIconCircles } from "@/portfolio-ui";
 
 type IntroductionType = {
@@ -10,33 +7,8 @@ type IntroductionType = {
 	profession: "Software Developer" | "Frontend Developer";
 };
 
-type LinkJsonResponse = {
-	id: number;
-	name: string;
-	url: string;
-};
-
 export function Introduction({ name, profession }: IntroductionType) {
-	const [resumeData, setResumeData] = useState<LinkJsonResponse>();
-
-	useEffect(() => {
-		const fetchResumeData = async () => {
-			if (isPlatform("hybrid")) {
-				const response = await CapacitorHttp.get({
-					url: `${API_BASE_URL}/api/link/resume`,
-				});
-				const jsonResponse: LinkJsonResponse = response.data;
-				setResumeData(jsonResponse);
-			} else {
-				const response = await axios.get<LinkJsonResponse>(
-					`${API_BASE_URL}/api/link/resume`,
-				);
-				const jsonResponse: LinkJsonResponse = response.data;
-				setResumeData(jsonResponse);
-			}
-		};
-		fetchResumeData();
-	}, []);
+	const { linkUrl } = useFetchLinks({ apiRoute: "link/resume" });
 
 	return (
 		<div className="py-4 m-2">
@@ -81,10 +53,7 @@ export function Introduction({ name, profession }: IntroductionType) {
 				<p className="leading-relaxed sm:text-3xl text-xl">
 					I build scalable, user-friendly application with modern technologies
 				</p>
-				<IonButton
-					onClick={() => window.open(resumeData?.url)}
-					className="my-2"
-				>
+				<IonButton onClick={() => window.open(linkUrl)} className="my-2">
 					Resume
 				</IonButton>
 			</div>

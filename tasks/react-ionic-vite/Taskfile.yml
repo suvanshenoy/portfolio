@@ -18,6 +18,6 @@ tasks:
 
   android:
     cmds:
-      - task react-ionic-vite:web:build
-      - defer: bun --cwd ../../packages/react-ionic-vite-src bun cap run android
-      - task: react-ionic-vite:add:android
+      - task web:build
+      - defer: bun --cwd ../../packages/react-ionic-vite-src cap run android
+      - task: add:android
