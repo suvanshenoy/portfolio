@@ -9,7 +9,7 @@ import { Introduction, TechStack } from "@/components";
 
 export function HomePage() {
 	return (
-		<IonPage className="home-page">
+		<IonPage>
 			<IonHeader>
 				<IonToolbar>
 					<IonTitle className="ml-3">Home</IonTitle>

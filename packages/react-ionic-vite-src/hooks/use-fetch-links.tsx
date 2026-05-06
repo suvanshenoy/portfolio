@@ -24,6 +24,7 @@ export function useFetchLinks({
 	>();
 
 	const [linkUrl, setLinkUrl] = useState<LinkJsonResponse["url"]>();
+	const [isDoneLoading, setIsDoneLoading] = useState(false);
 
 	useEffect(() => {
 		const fetchLinkData = async () => {
@@ -34,6 +35,7 @@ export function useFetchLinks({
 				const jsonResponse: LinkJsonResponse = response.data;
 				setLinkData(jsonResponse);
 				setLinkUrl(jsonResponse.url);
+				setIsDoneLoading(true);
 			} else {
 				const response = await axios.get<LinkJsonResponse>(
 					`${API_BASE_URL}/api/${apiRoute}`,
@@ -41,10 +43,11 @@ export function useFetchLinks({
 				const jsonResponse: LinkJsonResponse = response.data;
 				setLinkData(jsonResponse);
 				setLinkUrl(jsonResponse.url);
+				setIsDoneLoading(true);
 			}
 		};
 		fetchLinkData();
 	}, []);
 
-	return { linkData, linkUrl };
+	return { linkData, linkUrl, isDoneLoading };
 }
