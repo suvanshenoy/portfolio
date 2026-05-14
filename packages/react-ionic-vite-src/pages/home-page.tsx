@@ -16,7 +16,7 @@ export function HomePage() {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				<Introduction name="Suvan Shenoy" profession="Software Developer" />
+				<Introduction name="Suvan Shenoy" />
 				<TechStack />
 			</IonContent>
 		</IonPage>

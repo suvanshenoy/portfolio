@@ -1,4 +1,5 @@
 import { IonButton, isPlatform } from "@ionic/react";
+import { useCallback, useEffect, useState } from "react";
 import { useFetchLinks } from "@/hooks";
 import { SimpleIconCircles } from "@/portfolio-ui";
 
@@ -7,8 +8,30 @@ type IntroductionType = {
 	profession: "Software Developer" | "Frontend Developer";
 };
 
-export function Introduction({ name, profession }: IntroductionType) {
+const professions: Array<IntroductionType["profession"]> = [
+	"Software Developer",
+	"Frontend Developer",
+];
+
+export function Introduction({ name }: Pick<IntroductionType, "name">) {
 	const { linkUrl } = useFetchLinks({ apiRoute: "link/resume" });
+	const [profession, setProfession] =
+		useState<IntroductionType["profession"]>("Software Developer");
+
+	const shuffleProfession = useCallback(() => {
+		const index = Math.floor(Math.random() * professions.length);
+		const newProfession = professions[index];
+		if (newProfession === profession) {
+			shuffleProfession();
+		} else {
+			setProfession(newProfession);
+		}
+	}, [profession]);
+
+	useEffect(() => {
+		const intervalId = setInterval(shuffleProfession, 1000);
+		return () => clearInterval(intervalId);
+	}, [shuffleProfession]);
 
 	return (
 		<div className="py-4 m-2">
@@ -17,8 +40,8 @@ export function Introduction({ name, profession }: IntroductionType) {
 					Hey, I'm
 					<br />
 					{name}
-					<br />A {profession}
 				</p>
+				<p className="text-purple-400">A {profession}</p>
 			</div>
 			<div className="flex justify-center items-center h-125">
 				{isPlatform("hybrid") ? (
