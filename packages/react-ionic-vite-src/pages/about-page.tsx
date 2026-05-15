@@ -7,8 +7,13 @@ import {
 	IonToolbar,
 } from "@ionic/react";
 
-import { businessOutline, locationOutline } from "ionicons/icons";
+import { businessOutline } from "ionicons/icons";
+import { Experience } from "@/components";
+import { useDelegate } from "@/hooks";
+
 export function AboutPage() {
+	const { elementClicked, handleClick } = useDelegate();
+
 	return (
 		<IonPage>
 			<IonHeader>
@@ -17,7 +22,7 @@ export function AboutPage() {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				<div className="py-4 m-2 my-10 leading-relaxed text-xl md:text-4xl flex justify-center">
+				<div className="py-4 m-2 my-10 leading-relaxed text-xl md:text-4xl flex justify-center mx-auto">
 					<p>
 						I'm a passionate software developer
 						<br />
@@ -29,25 +34,45 @@ export function AboutPage() {
 					</p>
 				</div>
 				<div className="flex flex-col gap-2 p-2 justify-center items-center space-y-4">
-					<div className=" bg-gray-800 p-8 rounded w-80 md:w-150">
-						<div className="flex justify-between items-center">
-							<IonIcon icon={businessOutline} size="large" />
-							<p className="font-semibold text-xl md:text-2xl">Experience</p>
-							<p className="font-semibold bg-gray-700 rounded-full p-2 md:text-xl">
-								6 Months
-							</p>
+					{!elementClicked ? (
+						<div
+							className=" bg-[#303030] p-8 rounded w-80 md:w-150 cursor-pointer"
+							onClick={handleClick}
+						>
+							<div className="flex justify-between items-center">
+								<IonIcon icon={businessOutline} size="large" />
+								<p className="font-semibold text-xl md:text-2xl">Experience</p>
+								<p className="font-semibold bg-[#494949] rounded-full p-2 md:text-xl">
+									6 Months
+								</p>
+							</div>
 						</div>
-					</div>
-
-					<div className=" bg-gray-800 p-8 rounded w-80 md:w-150">
-						<div className="flex justify-between items-center">
-							<IonIcon icon={locationOutline} size="large" />
-							<p className="mr-8 font-semibold text-xl md:text-2xl">Location</p>
-							<p className="font-semibold mr-7 bg-gray-700 rounded-full p-2 md:text-xl">
-								India
-							</p>
+					) : (
+						<div
+							className=" bg-[#303030] p-8 rounded w-80 h-80 md:w-150 cursor-pointer overflow-auto overflow-y-auto"
+							onClick={handleClick}
+						>
+							<div className="flex justify-between items-center">
+								<IonIcon icon={businessOutline} size="large" />
+								<p className="font-semibold text-xl md:text-2xl relative right-25 md:right-60">
+									Experience
+								</p>
+							</div>
+							<Experience
+								companyName="Trikon Software Labs"
+								workingExperience={{ years: 0, months: 6 }}
+								position="Software Engineer"
+								technologiesUsed={[
+									"React",
+									"Mui",
+									"Tailwind",
+									"Bryntum",
+									"Twilio Api",
+									"Nextjs",
+								]}
+							/>
 						</div>
-					</div>
+					)}
 				</div>
 			</IonContent>
 		</IonPage>
