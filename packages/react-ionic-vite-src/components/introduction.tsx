@@ -35,13 +35,13 @@ export function Introduction({ name }: Pick<IntroductionType, "name">) {
 
 	return (
 		<div className="py-4 m-2">
-			<div className="m-2 p-2 text-3xl md:text-6xl leading-tight">
+			<div className="m-2 p-2 text-3xl md:text-6xl leading-tight font-bold">
 				<p>
 					Hey, I'm
 					<br />
 					{name}
 				</p>
-				<p className="text-purple-400">A {profession}</p>
+				<p className="text-[#094886] font-bold">A {profession}</p>
 			</div>
 			<div className="flex justify-center items-center h-125">
 				{isPlatform("hybrid") ? (
@@ -76,7 +76,10 @@ export function Introduction({ name }: Pick<IntroductionType, "name">) {
 				<p className="leading-relaxed sm:text-3xl text-xl">
 					I build scalable, user-friendly application with modern technologies
 				</p>
-				<IonButton onClick={() => window.open(linkUrl)} className="my-2">
+				<IonButton
+					onClick={() => window.open(linkUrl)}
+					className="my-2 font-semibold text-blue-200"
+				>
 					Resume
 				</IonButton>
 			</div>

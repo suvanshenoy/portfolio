@@ -11,5 +11,9 @@
 			"@shadcn-ui/*": ["../../packages/react-ionic-vite-src/shadcn-ui/ui/*"]
 		}
 	},
-	"include": ["vite.config.ts"]
+	"include": [
+		"vite.config.ts",
+		"main.tsx",
+		"../../packages/react-ionic-vite-src/**/*"
+	]
 }

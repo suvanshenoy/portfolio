@@ -36,7 +36,7 @@ export function ContactPage() {
 							linkData.map((link) => (
 								<div
 									key={link.id}
-									className="flex gap-2 bg-gray-800 p-7 md:p-10 rounded"
+									className="flex gap-2 bg-[#0a0a80] p-7 md:p-10 rounded"
 								>
 									<IonIcon
 										icon={

@@ -36,20 +36,20 @@ export function AboutPage() {
 				<div className="flex flex-col gap-2 p-2 justify-center items-center space-y-4">
 					{!elementClicked ? (
 						<div
-							className=" bg-[#303030] p-8 rounded w-80 md:w-150 cursor-pointer"
+							className="shadow-xl p-8 rounded w-80 md:w-150 cursor-pointer"
 							onClick={handleClick}
 						>
 							<div className="flex justify-between items-center">
 								<IonIcon icon={businessOutline} size="large" />
 								<p className="font-semibold text-xl md:text-2xl">Experience</p>
-								<p className="font-semibold bg-[#494949] rounded-full p-2 md:text-xl">
+								<p className="font-semibold bg-[#0a0a80] rounded-full p-2 md:text-xl">
 									6 Months
 								</p>
 							</div>
 						</div>
 					) : (
 						<div
-							className=" bg-[#303030] p-8 rounded w-80 h-80 md:w-150 cursor-pointer overflow-auto overflow-y-auto"
+							className="shadow-xl p-8 rounded w-80 h-80 md:w-150 cursor-pointer overflow-auto overflow-y-auto"
 							onClick={handleClick}
 						>
 							<div className="flex justify-between items-center">
@@ -62,6 +62,7 @@ export function AboutPage() {
 								companyName="Trikon Software Labs"
 								workingExperience={{ years: 0, months: 6 }}
 								position="Software Engineer"
+								positionValidity="Full-Time"
 								technologiesUsed={[
 									"React",
 									"Mui",
