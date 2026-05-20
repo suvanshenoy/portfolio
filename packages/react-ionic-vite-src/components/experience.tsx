@@ -20,13 +20,16 @@ export function Experience({
 }: ExperienceType) {
 	const { elementClicked, handleClick } = useDelegate();
 	return (
-		<div className="shadow-2xl relative top-2 p-2 m-2" onClick={handleClick}>
+		<div
+			className="shadow-xl border-t border-t-blue-900 shadow-black  relative top-2 p-2 m-2 rounded-md"
+			onClick={handleClick}
+		>
 			{!elementClicked ? (
 				<div className="flex justify-between p-2 m-2">
 					<p className="font-semibold md:text-2xl p-2 mt-2">
 						{companyName} ({positionValidity})
 					</p>
-					<div className="text-sm md:text-xl bg-[#0a0a80] rounded-full p-4 md:p-2 m-2">
+					<div className="text-sm md:text-xl bg-[#0c0c61] rounded-full p-4 md:p-2 m-2">
 						{!workingExperience.years ? (
 							<p className="text-center font-bold">
 								{workingExperience?.months} months

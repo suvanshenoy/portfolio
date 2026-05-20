@@ -165,7 +165,7 @@ ion-content {
 }
 
 ion-button {
-  --background: linear-gradient(to top right,rgb(0 0 255 / 0.2 ),rgb(0 0 255 / 0.5));
+  --background: linear-gradient(to top right,rgb(0 0 255 / 0.1 ),rgb(0 0 255 / 0.5));
 }
 
 @source "./";

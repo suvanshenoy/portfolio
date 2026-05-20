@@ -23,9 +23,11 @@ export function ContactPage() {
 			</IonHeader>
 			<IonContent>
 				<div className="p-2 m-4 ">
-					<p className="text-center text-xl md:text-4xl leading-relaxed">
+					<p className="text-center text-xl font-semibold md:text-4xl">
 						Let's connect
-						<br />
+					</p>
+					<br />
+					<p className="text-center text-xl md:text-4xl leading-relaxed">
 						I'm always open to discussing new opportunities or interesting
 						projects
 					</p>
@@ -36,7 +38,7 @@ export function ContactPage() {
 							linkData.map((link) => (
 								<div
 									key={link.id}
-									className="flex gap-2 bg-[#0a0a80] p-7 md:p-10 rounded"
+									className="flex gap-2  shadow-md border-t border-t-blue-900 shadow-black p-7 md:p-10 rounded"
 								>
 									<IonIcon
 										icon={
@@ -57,7 +59,7 @@ export function ContactPage() {
 												? window.open(`mailto:${link.url}`)
 												: window.open(link.url)
 										}
-										className="mt-1 text-blue-500 text-xl md:text-2xl"
+										className="mt-1  text-xl md:text-2xl"
 									>
 										{link.name}
 									</button>

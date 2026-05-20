@@ -78,7 +78,7 @@ export function Introduction({ name }: Pick<IntroductionType, "name">) {
 				</p>
 				<IonButton
 					onClick={() => window.open(linkUrl)}
-					className="my-2 font-semibold text-blue-200"
+					className="my-2 font-semibold text-white"
 				>
 					Resume
 				</IonButton>
