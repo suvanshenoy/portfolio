@@ -1,10 +1,8 @@
 import {
-	IonCol,
 	IonContent,
 	IonGrid,
 	IonHeader,
 	IonPage,
-	IonRow,
 	IonTitle,
 	IonToolbar,
 	isPlatform,
@@ -42,34 +40,24 @@ export function ProjectsPage() {
 					</>
 				) : (
 					<IonGrid>
-						<IonRow>
-							<IonCol>
-								<ProjectCard
-									projectTitle="Eventify"
-									projectGithubSrc="https://github.com/suvanshenoy/eventify"
-								/>
-							</IonCol>
-							<IonCol>
-								<ProjectCard
-									projectTitle="MoniMind"
-									projectGithubSrc="https://github.com/suvanshenoy/monimind-frontend"
-								/>
-							</IonCol>
-						</IonRow>
-						<IonRow>
-							<IonCol>
-								<ProjectCard
-									projectTitle="Finance Dashboard UI"
-									projectGithubSrc="https://github.com/suvanshenoy/finance-dashboard-ui"
-								/>
-							</IonCol>
-							<IonCol>
-								<ProjectCard
-									projectTitle="Portfolio"
-									projectGithubSrc="https://github.com/suvanshenoy/portfolio"
-								/>
-							</IonCol>
-						</IonRow>
+						<div className="flex flex-col">
+							<ProjectCard
+								projectTitle="Eventify"
+								projectGithubSrc="https://github.com/suvanshenoy/eventify"
+							/>
+							<ProjectCard
+								projectTitle="MoniMind"
+								projectGithubSrc="https://github.com/suvanshenoy/monimind-frontend"
+							/>
+							<ProjectCard
+								projectTitle="Finance Dashboard UI"
+								projectGithubSrc="https://github.com/suvanshenoy/finance-dashboard-ui"
+							/>
+							<ProjectCard
+								projectTitle="Portfolio"
+								projectGithubSrc="https://github.com/suvanshenoy/portfolio"
+							/>
+						</div>
 					</IonGrid>
 				)}
 			</IonContent>

@@ -8,34 +8,28 @@ import {
 } from "@/shadcn-ui/ui/card";
 
 type ProjectCardProps = {
-	projectImageSrc?: string;
 	projectGithubSrc: string;
 	projectTitle: string;
 	projectDescription?: string;
 };
 
 export function ProjectCard({
-	projectImageSrc,
 	projectTitle,
 	projectDescription,
 	projectGithubSrc,
 }: ProjectCardProps) {
 	return (
-		<div className="p-2 m-2">
-			<Card className="relative mx-auto w-full max-w-4xl pt-0">
-				<div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-				<img
-					src={projectImageSrc}
-					alt="Project Cover"
-					className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
-				/>
+		<div className="p-4 m-2">
+			<Card className="relative mx-auto w-60 md:w-120 bg-[#0c0c61] shadow-md shadow-black">
 				<CardHeader>
-					<CardTitle>{projectTitle}</CardTitle>
+					<CardTitle className="text-center font-bold text-2xl text-white">
+						{projectTitle}
+					</CardTitle>
 					<CardDescription>{projectDescription}</CardDescription>
 				</CardHeader>
-				<CardFooter>
+				<CardFooter className="bg-[#0c0c61] ">
 					<Button
-						className="w-full"
+						className="w-full bg-blue-900"
 						onClick={() => {
 							window.open(projectGithubSrc);
 						}}
