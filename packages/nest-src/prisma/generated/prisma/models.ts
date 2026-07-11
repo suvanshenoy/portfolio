@@ -9,4 +9,5 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/Links.js'
+export type * from './models/Skills.js'
 export type * from './commonInputTypes.js'

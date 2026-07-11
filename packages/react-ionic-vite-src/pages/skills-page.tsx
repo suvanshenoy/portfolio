@@ -6,7 +6,16 @@ import {
 	IonToolbar,
 } from "@ionic/react";
 
+import { useFetch } from "@/hooks";
+
 export function SkillsPage() {
+	const skills = {
+		languageRuntimes: useFetch({ apiRoute: "skill/languageRuntimes" })?.skillList ?? [""],
+		libraryFrameworks: useFetch({ apiRoute: "skill/libraryFrameworks" })?.skillList ?? [""],
+		platformTools: useFetch({ apiRoute: "skill/platformTools" }).skillList ?? [""],
+		deploymentDevops: useFetch({ apiRoute: "skill/deploymentDevops" }).skillList ?? [""]
+	};
+
 	return (
 		<IonPage>
 			<IonHeader>
@@ -57,27 +66,3 @@ export function SkillsPage() {
 		</IonPage>
 	);
 }
-
-const skills = {
-	languageRuntimes: ["Html", "Css", "Javascript", "Typescript", "Nodejs"],
-	libraryFrameworks: [
-		"React",
-		"Tailwind",
-		"Zustand",
-		"Zod",
-		"Vite",
-		"Ionic",
-		"Mui",
-		"Bryntum",
-		"Nextjs",
-	],
-	platformTools: [
-		"Git",
-		"Github",
-		"Linux",
-		"Clickup",
-		"Slack",
-		"Oracle Virutal Box",
-	],
-	deploymentDevops: ["Docker", "Vercel", "Terraform", "Github Actions"],
-};
