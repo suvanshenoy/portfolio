@@ -10,6 +10,7 @@ import {
 
 import { document, logoGithub, logoLinkedin, mail } from "ionicons/icons";
 import { useFetchLinks } from "@/hooks";
+// import { useFetch } from "@/hooks";
 
 export function ContactPage() {
 	const { linkData, isDoneLoading } = useFetchLinks({ apiRoute: "links" });

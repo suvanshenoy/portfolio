@@ -22,3 +22,8 @@ export * from './enums.js';
  * 
  */
 export type Links = Prisma.LinksModel
+/**
+ * Model Skills
+ * 
+ */
+export type Skills = Prisma.SkillsModel

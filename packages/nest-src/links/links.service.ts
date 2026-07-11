@@ -4,7 +4,7 @@ import { PrismaService } from "../prisma.service";
 
 @Injectable()
 export class LinksService {
-	constructor(private prismaService: PrismaService) {}
+	constructor(private prismaService: PrismaService) { }
 
 	async link(linksWhereInput: Prisma.LinksWhereInput): Promise<Links | null> {
 		return this.prismaService.links.findFirst({

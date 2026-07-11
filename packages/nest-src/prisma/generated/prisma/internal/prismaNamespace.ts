@@ -384,7 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Links: 'Links'
+  Links: 'Links',
+  Skills: 'Skills'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "links"
+    modelProps: "links" | "skills"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -478,6 +479,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Skills: {
+      payload: Prisma.$SkillsPayload<ExtArgs>
+      fields: Prisma.SkillsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SkillsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SkillsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        findFirst: {
+          args: Prisma.SkillsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SkillsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        findMany: {
+          args: Prisma.SkillsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>[]
+        }
+        create: {
+          args: Prisma.SkillsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        createMany: {
+          args: Prisma.SkillsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SkillsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>[]
+        }
+        delete: {
+          args: Prisma.SkillsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        update: {
+          args: Prisma.SkillsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        deleteMany: {
+          args: Prisma.SkillsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SkillsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SkillsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>[]
+        }
+        upsert: {
+          args: Prisma.SkillsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SkillsPayload>
+        }
+        aggregate: {
+          args: Prisma.SkillsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSkills>
+        }
+        groupBy: {
+          args: Prisma.SkillsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SkillsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SkillsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SkillsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -524,6 +599,15 @@ export const LinksScalarFieldEnum = {
 } as const
 
 export type LinksScalarFieldEnum = (typeof LinksScalarFieldEnum)[keyof typeof LinksScalarFieldEnum]
+
+
+export const SkillsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  skillList: 'skillList'
+} as const
+
+export type SkillsScalarFieldEnum = (typeof SkillsScalarFieldEnum)[keyof typeof SkillsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -700,6 +784,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   links?: Prisma.LinksOmit
+  skills?: Prisma.SkillsOmit
 }
 
 /* Types for Logging */

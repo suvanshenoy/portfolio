@@ -18,3 +18,9 @@ model Links {
   name String
   url String
 }
+
+model Skills {
+  id Int @id @default(autoincrement())
+  name String
+  skillList String[]
+}
